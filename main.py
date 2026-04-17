@@ -25,8 +25,7 @@ async def render_tikz(request: TikzRequest):
     results = []
     
     for code in request.tikz_codes:
-        # Bọc code TikZ của Giáo viên vào một khung chuẩn LaTeX (Standalone giúp cắt ảnh vừa khít)
-      latex_doc = f"""
+        latex_doc = f"""
 \\documentclass[tikz, border=2pt]{{standalone}}
 \\usepackage[utf8]{{inputenc}}
 \\usepackage{{amsmath, amssymb, amsfonts}}
