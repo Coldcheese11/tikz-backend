@@ -32,7 +32,7 @@ async def render_tikz(request: TikzRequest):
 \\usepackage{{amsmath, amssymb, amsfonts}}
 \\usepackage{{tkz-euclide}}
 \\usepackage{{pgfplots}}
-\usetikzlibrary{arrows, arrows.meta, calc, patterns, shapes.geometric} 
+\\usetikzlibrary{{arrows, arrows.meta, calc, patterns, shapes.geometric}}
 \\pgfplotsset{{compat=1.18}}
 \\begin{{document}}
 {code}
