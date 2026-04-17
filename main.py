@@ -26,13 +26,14 @@ async def render_tikz(request: TikzRequest):
     
     for code in request.tikz_codes:
         # Bọc code TikZ của Giáo viên vào một khung chuẩn LaTeX (Standalone giúp cắt ảnh vừa khít)
-        latex_doc = f"""
+      latex_doc = f"""
 \\documentclass[tikz, border=2pt]{{standalone}}
 \\usepackage[utf8]{{inputenc}}
 \\usepackage{{amsmath, amssymb, amsfonts}}
 \\usepackage{{tkz-euclide}}
+\\usepackage{{tkz-tab}} % Hỗ trợ vẽ Bảng biến thiên, Bảng xét dấu
 \\usepackage{{pgfplots}}
-\\usetikzlibrary{{arrows, arrows.meta, calc, patterns, shapes.geometric}}
+\\usetikzlibrary{{arrows, arrows.meta, calc, patterns, shapes.geometric, positioning, intersections, quotes, angles}}
 \\pgfplotsset{{compat=1.18}}
 \\begin{{document}}
 {code}
